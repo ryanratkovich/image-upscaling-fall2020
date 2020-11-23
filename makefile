@@ -1,4 +1,4 @@
-main: upsample.cpp
-	g++ --std=c++11 upsample.cpp -o main
+main: main.cpp
+	g++ --std=c++11 main.cpp -o main
 clean:
 	rm *.o
