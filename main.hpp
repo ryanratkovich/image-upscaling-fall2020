@@ -120,32 +120,32 @@ vector<vector<int>> bilinear(const vector<vector<int>> & in){	// upscales a 256 
 
 /* MAIN */
 
-int main(int argc, char** argv) {
+// int main(int argc, char** argv) {
 
-	ifstream file1;	// open input file
-	//ifstream file2;
-	file1.open(argv[1]);
-	//file2.open("sample1_original_image.txt");
+// 	ifstream file1;	// open input file
+// 	//ifstream file2;
+// 	file1.open(argv[1]);
+// 	//file2.open("sample1_original_image.txt");
 
-	vector<vector<int>> input_matrix = create_matrix(file1); // 256 x 256 vector of integers from input file
+// 	vector<vector<int>> input_matrix = create_matrix(file1); // 256 x 256 vector of integers from input file
 
-	vector<vector<int>> nearest_neighbor_matrix = nearest_neighbor(input_matrix); // 512 x 512 vector upscaling of input_matrix using NN
+// 	vector<vector<int>> nearest_neighbor_matrix = nearest_neighbor(input_matrix); // 512 x 512 vector upscaling of input_matrix using NN
 
-	//vector<vector<int>> original_matrix = create_matrix(file2);	// 512 x 512 vector of integers from original image file
+// 	//vector<vector<int>> original_matrix = create_matrix(file2);	// 512 x 512 vector of integers from original image file
 
-	vector<vector<int>> bilinear_matrix = bilinear(input_matrix); // 512 x 512 vector upscaling of input_matrix using attempted bilinear algorithm
+// 	vector<vector<int>> bilinear_matrix = bilinear(input_matrix); // 512 x 512 vector upscaling of input_matrix using attempted bilinear algorithm
 
-	// int L1_metric = calculate_L1(nearest_neighbor_matrix, original_matrix);
+// 	// int L1_metric = calculate_L1(nearest_neighbor_matrix, original_matrix);
 
-	// int L1_metric2 = calculate_L1(bilinear_matrix, original_matrix);
+// 	// int L1_metric2 = calculate_L1(bilinear_matrix, original_matrix);
 
-	// cout << "L1 metric NN: " << L1_metric << endl;
+// 	// cout << "L1 metric NN: " << L1_metric << endl;
 
-	// cout << "L1 metric bilinear: " << L1_metric2 << endl;
+// 	// cout << "L1 metric bilinear: " << L1_metric2 << endl;
 
-	create_file(nearest_neighbor_matrix, argv[2]);	// creates output file
+// 	create_file(nearest_neighbor_matrix, argv[2]);	// creates output file
 
-	//file2.close();
-	file1.close();
-	return 0;
-}
+// 	//file2.close();
+// 	file1.close();
+// 	return 0;
+// }
