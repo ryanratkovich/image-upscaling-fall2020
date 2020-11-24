@@ -13,7 +13,7 @@
 
 using namespace std;
 
-/* 	HELPER FUNCTIONS */
+/* 	FUNCTIONS */
 
 void create_file(vector<vector<int>> m, string filename){	// creates output file with 512 x 512 matrix data in current working directory
 	ofstream file;
@@ -108,44 +108,12 @@ vector<vector<int>> bilinear(const vector<vector<int>> & in){	// upscales a 256 
 	return out;	// return 512 x 512 matrix
 }
 
-// int calculate_L1(const vector<vector<int>> & a, const vector<vector<int>> & b){	// calculates L1 metric
-// 	int sum = 0;
-// 	for (int i = 0; i < 512; ++i){
-// 		for (int j = 0; j < 512; ++j){
-// 			sum += abs(a[i][j] - b[i][j]);
-// 		}
-// 	}
-// 	return sum;
-// }
-
-/* MAIN */
-
-// int main(int argc, char** argv) {
-
-// 	ifstream file1;	// open input file
-// 	//ifstream file2;
-// 	file1.open(argv[1]);
-// 	//file2.open("sample1_original_image.txt");
-
-// 	vector<vector<int>> input_matrix = create_matrix(file1); // 256 x 256 vector of integers from input file
-
-// 	vector<vector<int>> nearest_neighbor_matrix = nearest_neighbor(input_matrix); // 512 x 512 vector upscaling of input_matrix using NN
-
-// 	//vector<vector<int>> original_matrix = create_matrix(file2);	// 512 x 512 vector of integers from original image file
-
-// 	vector<vector<int>> bilinear_matrix = bilinear(input_matrix); // 512 x 512 vector upscaling of input_matrix using attempted bilinear algorithm
-
-// 	// int L1_metric = calculate_L1(nearest_neighbor_matrix, original_matrix);
-
-// 	// int L1_metric2 = calculate_L1(bilinear_matrix, original_matrix);
-
-// 	// cout << "L1 metric NN: " << L1_metric << endl;
-
-// 	// cout << "L1 metric bilinear: " << L1_metric2 << endl;
-
-// 	create_file(nearest_neighbor_matrix, argv[2]);	// creates output file
-
-// 	//file2.close();
-// 	file1.close();
-// 	return 0;
-// }
+int calculate_L1(const vector<vector<int>> & a, const vector<vector<int>> & b){	// calculates L1 metric
+	int sum = 0;
+	for (int i = 0; i < 512; ++i){
+		for (int j = 0; j < 512; ++j){
+			sum += abs(a[i][j] - b[i][j]);
+		}
+	}
+	return sum;
+}

@@ -21,28 +21,28 @@ TEST(NearestNeighborTest, HandlesInput){
 	vector<vector<int>> vec;
 	vector<int> row;
 	for (int i = 0; i < 256; ++i){
-		for (int j = 0; j < 256; +j){
+		for (int j = 0; j < 256; ++j){
 			row.push_back(0);
 		}
 		vec.push_back(row);
 		row.clear();
 	}
 	vector<vector<int>> test = nearest_neighbor(vec);
-	EXPECT_EQ(test.size(), 512);
+	ASSERT_EQ(test.size(), 512);
 }
 
 TEST(BilinearTest, HandlesInput){
 	vector<vector<int>> vec;
 	vector<int> row;
 	for (int i = 0; i < 256; ++i){
-		for (int j = 0; j < 256; +j){
+		for (int j = 0; j < 256; ++j){
 			row.push_back(0);
 		}
 		vec.push_back(row);
 		row.clear();
 	}
 	vector<vector<int>> test = bilinear(vec);
-	EXPECT_EQ(test.size(), 512);
+	ASSERT_EQ(test.size(), 512);
 }
 
 int main(int argc, char **argv){
